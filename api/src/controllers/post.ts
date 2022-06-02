@@ -48,7 +48,10 @@ export const getPost: RequestHandler = async (req, res) => {
                     id: parseInt(postId)
                 },
                 relations: {
-                    user: true
+                    user: true,
+                    comments: {
+                        user: true
+                    }
                 }
             });
 
