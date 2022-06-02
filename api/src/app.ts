@@ -18,16 +18,16 @@ const main = async () => {
         
         await AppDataSource.initialize();
 
+        app.use(cors({
+            origin: 'http://localhost:8080',
+            methods: '*'
+        }));
+
         app.use(express.json());
 
         app.use('/api/user', userRoutes);
         app.use('/api/post', postRoutes);
         app.use('/api/comment', commentRoutes);
-
-        app.use(cors({
-            origin: 'http://localhost:8080',
-            methods: ['GET', 'POST', 'PATCH', 'DELETE']
-        }));
 
         app.listen(port, () => {
             console.log(`http://localhost:${port}`);
