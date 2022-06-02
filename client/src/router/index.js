@@ -3,11 +3,12 @@ import HomeView from '../views/HomeView.vue'
 import Login from '../views/Login.vue';
 import Register from '../views/Register.vue';
 import CreatePost from '../views/CreatePost.vue';
+import Post from '../views/Post.vue';
 
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'Home',
     component: HomeView
   },
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/create-post',
     name: 'CreatePost',
     component: CreatePost
+  },
+  {
+    path: '/post/:id',
+    name: 'Post',
+    component: Post
   }
 ]
 
